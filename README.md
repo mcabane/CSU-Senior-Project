@@ -14,7 +14,7 @@ customizable with color themes.
 
 ## Compile/Deploy
 
-The application will be delopyed to a hosting website, Fly.io.
+The application will be deployed to a hosting website, Fly.io.
 
 ## Usage
 (To be completed later.)
