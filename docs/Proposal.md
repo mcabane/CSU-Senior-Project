@@ -16,16 +16,16 @@ occur frequently. When one is busy with responsibilities it can be difficult to
 keep track of appointments, deadlines, maintenance, and other non-regular 
 day-to-day chores. 
 
-If important dates are not kept track of it can leave people rushing to complete
+If important dates are not kept track of, it can leave people rushing to complete
 important things like filing taxes to the last minute. If consistent 
 appointments are not maintained it could result in a decline in health or
 health conditions remaining untreated. If maintenance of appliances or vehicles
-is left uncompleted; it could result in serious damage. For example, if the dryer
+is left uncompleted; it could result in serious damage. For example, if a dryer
 vent is left blocked; it could result in a fire. 
 
 A solution to maintaining organized list of non-frequent and important 
 life-related tasks is the Stay on Track web application. Users will be able to 
-set recurring reminder of appointments, maintenance, deadlines, expiration dates
+set recurring reminders of appointments, maintenance, deadlines, expiration dates
 of licenses/tags, and other non-frequent chores.
 
 Project Description
@@ -47,28 +47,28 @@ customizable with color themes.
 Proposed Implementation Language(s) 
 -----------------------------------
 
-*HTML
-*CSS
-*Javascript
-*Ruby
+*   HTML
+*   CSS
+*   Javascript
+*   Ruby
 
 
 Libraries, Packages, Development Kits, etc. to be used in the proposed implementation languages(s)
 --------------------------------------------------------------------------------------------------
 
-*Ruby on Rails
-*FullCalendar
+*   Ruby on Rails
+*   FullCalendar
 
 Additional Software/Equipment Needed
 ------------------------------------
 
 Hardware
-*Personal Computer
+*   Personal Computer
 
 Software
-*Visual Studio Code
-*GitHub
-*Adobe Illustrator
+*   Visual Studio Code
+*   GitHub
+*   Adobe Illustrator
 
 Personal Motivation
 -------------------
@@ -85,25 +85,23 @@ less overwhelmed and improve their quality of life.
 Outline of Future Research Efforts
 ----------------------------------
 Features
-*Research the type of appointments and maintenance that often get forgotten
+*   Research the type of appointments and maintenance that often get forgotten
 
 UX/UI
-*Complete User-Interface Programming Course
-*Research successful task management tools
-*Determine ways to have customization
+*   Complete User-Interface Programming Course
+*   Research successful task management tools
+*   Determine ways to have customization
 
 Development 
-*Learn more about frameworks like React.js and Ruby on Rails
-*Learn best ways to create illustrations for web applications
-*Research Email API and how to implement
+*   Learn more about frameworks like React.js and Ruby on Rails
+*   Learn best ways to create illustrations for web applications
+*   Research Email API and how to implement
 
 Deployment
-*Research more into deployment options like Fly.io
+*   Research more into deployment options like Fly.io
 
 Schedule
 --------
-
-(Update the dates and add your tasks by replacing the examples. Remove this note.)
 
 *   Spring 2025 - CSCI 497
     -   January 26 - Brainstorm ideas
@@ -128,7 +126,7 @@ Schedule
     -   November 17 - 
     -   November 20 - 
 
-*   Spring 2026 - CSCI 499 (more detail will be added here once you are closer)
+*   Spring 2026 - CSCI 499
     -   Weeks 1-4 - Implement test plan
     -   Week 5 - Evaluate test results
     -   Week 6-10 - Apply updates and bug fixes based on the results
