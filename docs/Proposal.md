@@ -58,6 +58,7 @@ Libraries, Packages, Development Kits, etc. to be used in the proposed implement
 
 *   Ruby on Rails
 *   FullCalendar
+*   Hotwire
 
 Additional Software/Equipment Needed
 ------------------------------------
@@ -96,6 +97,7 @@ Development
 *   Learn more about frameworks like React.js and Ruby on Rails
 *   Learn best ways to create illustrations for web applications
 *   Research Email API and how to implement
+*   Research hotwire and how to implement
 
 Deployment
 *   Research more into deployment options like Fly.io
@@ -103,32 +105,24 @@ Deployment
 Schedule
 --------
 
-*   Spring 2025 - CSCI 497
-    -   January 26 - Brainstorm ideas
-    -   February 9 - Start working on proposal draft
-    -   February 24 - Draft Project Proposal Due 
-    -   March 8 - Start working on Requirements Document
-    -   March 22 - Send First-Draft of the Requirements Document to advisor for feedback
-    -   April 5 - Refine Proposal and Requirements Document
-    -   April 15 - Final Proposal and Requirements Document Due
-
 *   Summer 2025 - Independent/Optional Project Work
-    -   May 12 - Begin sketching illustrations
+    -   May 12 - Begin sketching illustrations and continue research
     -   June 1 - Begin work on illustrations 
     -   July 1 - Complete illustrations
-    -   July 7 - Begin working on web application
+    -   July 7 - Begin working on web application mockup
+    -   July 14 - Begin working on web application 
+    -   August 1 - Working prototype that can do basic features and has display interface
 
 *   Fall 2025 - CSCI 498
-    -   October 20 - 
-    -   October 27 - 
-    -   November 3 - 
-    -   November 10 - 
-    -   November 17 - 
-    -   November 20 - 
+    -   September 1 - Add additional planned features
+    -   October 20 -  Product with half of planned features
+    -   November 3 - Create test plan and continue adding planned features
+    -   November 10 - Initial date for all features added
+    -   November 17 - Review product and add any missed features
 
 *   Spring 2026 - CSCI 499
-    -   Weeks 1-4 - Implement test plan
-    -   Week 5 - Evaluate test results
-    -   Week 6-10 - Apply updates and bug fixes based on the results
-    -   Week 8 - Computer the first 4 chapters of the defense documentation.
-    -   ...
+    -   January 12 to February 9 - Implement test plan
+    -   February 10 - Begin draftng defense documentation
+    -   February 16 - Evaluate test results and identify areas of improvement
+    -   Febuary 23 to March 16 - Apply updates and bug fixes based on the results
+    -   April 6 - Complete defense documentation
