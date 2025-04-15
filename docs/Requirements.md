@@ -271,7 +271,7 @@ If the user has a consistent schedule of either working or classes it would be
 helpful to be recommended times to set important tasks/events.   
 **Fit Criterion:**   
 The user is able to add time blocks to mark when they are busy on that given 
-day. It will be in a format orgainzed by weekday or month depending on user's 
+day. It will be in a format organized by weekday or month depending on user's 
 selection of checkbox. Once the user’s schedule is added, the recommended times 
 will update to match.   
 **Priority:** Medium   
@@ -385,7 +385,7 @@ provide a short description about the object.
 Enable the user to track long term goals alongside recurring tasks.   
 **Rationale:**   
 As web application is used to track long term recurring tasks, it would be more
-convient for the user to also track their long term goals.   
+convenient for the user to also track their long term goals.   
 **Fit Criterion:**   
 Similar to task creation with changes, it should include title, description, 
 milestones, deadlines, and visually different from other tasks/categories by 
@@ -414,7 +414,7 @@ the correct months based on the user's data.
 
 ---
 
-**ID Number:** 26
+**ID Number:** 26  
 **Type:** Useability  
 **Description:**   
 Enable the user to access the web application on different devices.   
@@ -426,44 +426,46 @@ while maintaining useability.
 Display texts and images in a format that that does not cause the tasks to 
 overflow, overlap, or become unreadable when the web application is used on 
 different sized screens. Check that the web application still maintains an 
-organized appearance when using smaller screens, such as a phone.
-**Priority:** Medium
+organized appearance when using smaller screens, such as a phone.  
+**Priority:** Medium  
 **Dependencies:** ID 7
 
 ---
 
-**ID Number:** 27
+**ID Number:** 27  
 **Type:** Privacy   
 **Description:**   
-Enable the user delete account that they no longer wish to use.
+Enable the user delete their account that they no longer wish to use.  
 **Rationale:**   
-When there is an option to create an account, a way to delete account is needed.
-It would also benefit the user of having a simple way of removing their data.  
+When there is an option to create an account, a way to delete the account is 
+needed. It would also benefit the user of having a simple way of removing 
+their data.  
 **Fit Criterion:**   
-User is able to delete account by selecting delete account button. A message will
-appear, confirming that the user wants to delete their account. If the user 
+User is able to delete account by selecting delete account button. A message 
+will appear, confirming that the user wants to delete their account. If the user 
 selects 'no', the account is not deleted and should retain all its data. If 
 the user selects 'yes', the account will be deleted and their data no longer 
 stored in the database. The user should also no longer receive email 
-notification of upcoming tasks.
-**Priority:** Medium
+notification of upcoming tasks. The user will only be able to delete their own 
+account, no effect will be made on the accounts of other users.    
+**Priority:** Medium  
 **Dependencies:** ID 19, ID 20
 
 ---
 
-**ID Number:** 28
+**ID Number:** 28  
 **Type:** Ease of Use   
 **Description:**   
-Enable the user to change settings of features by using the settings page.
+Enable the user to change settings of features by using the settings page.  
 **Rationale:**   
 Users prefer having more control of the product they are using. With all the 
 settings in one place, it is more convient for the user to make changes rather 
-than searching for the setting of a specific feature somewhere else.
+than searching for the setting of a specific feature somewhere else.  
 **Fit Criterion:**   
 User is able to change the settings of color theme, text sizing, task display,
 receiving notification, when emails sent, showing help descriptions, 
 account details, and account deletion. The changes to the selected features will
 be correctly applied when the user selects save changes button. The user can 
 click a reset to default button, that will return all settings to default.  
-**Priority:** Low
+**Priority:** Low  
 **Dependencies:** ID 7, ID 12, ID 14, ID 19, ID 20
