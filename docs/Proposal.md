@@ -105,20 +105,17 @@ Deployment
 Schedule
 --------
 
-*   Summer 2025 - Independent/Optional Project Work
-    -   May 12 - Begin sketching illustrations and continue research
-    -   June 1 - Begin work on illustrations 
-    -   July 1 - Complete illustrations
-    -   July 7 - Begin working on web application mockup
-    -   July 14 - Begin working on web application 
-    -   August 1 - Working prototype that can do basic features and has display interface
-
 *   Fall 2025 - CSCI 498
-    -   September 1 - Add additional planned features
+    -   September 1 - Begin work on illustrations
+    -   September 6 - Create mockup of web application
+    -   September 7 - Begin working on web application
+    -   September 22 - Create test plans and continue adding planned features
+    -   October 1 - Working prototype that can do basic features and has display interface
+    -   October 6 - Draft test plans and project update
     -   October 20 -  Product with half of planned features
-    -   November 3 - Create test plan and continue adding planned features
     -   November 10 - Initial date for all features added
     -   November 17 - Review product and add any missed features
+    -   November 24 - Final Test Plan Completed
 
 *   Spring 2026 - CSCI 499
     -   January 12 to February 9 - Implement test plan

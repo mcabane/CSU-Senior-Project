@@ -321,7 +321,7 @@ allow them to sign in on different devices.
 The user would be able to create an account by submitting the form and be able 
 to access their specific data by logging in. Once logged in their account 
 details should match the user. The user will be notified by having a 
-confirmation message appear.  
+confirmation message appears.  
 **Priority:** High    
 **Dependencies:** ID 21
 
