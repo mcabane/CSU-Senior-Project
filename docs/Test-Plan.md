@@ -30,7 +30,7 @@ requirements and is able to catch errors that a user may experience when using
 web application. 
 
 
-### Features to be Tested
+### Features to be Tested (Still in progress)
 
 - Task Creation & Deletion (Requirements 1 & 2)
 - Task Organization (Requirement 3)
@@ -41,7 +41,7 @@ web application.
 - Account Creation & Deletion (Requirements 20, 21, 27)
 - Responsive Design (Requirement 26)
 
-### Features Not to Be Tested
+### Features Not to Be Tested (Still in progress)
 Features will not be tested as they are considered low priority and not part
 of main purpose of web application.
 - Color Customization (Requirement 12)
@@ -58,8 +58,17 @@ User surveys will be used to receive feedback and gain measurable rating of
 specific qualities, such as ease of use. Feedback will be utilized to identify 
 useability issues, errors, and areas of improvement.
 
-### User-Acceptance Test Cases
-| #   | TEST ITEM | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
+### User-Acceptance Test Cases (Still in progress)
+| #   | TEST ITEM | TEST STEPS | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
 | --: | --------- | ---------------- | -------------- | ---- |
-|  1  |Creating Task|Task is created with the correct details that were entered. The recurrency dates are automatically created with the chosen interval|                |      |
+|  1  |Creating Task| 
+<ol>
+  <li>Navigate to task creation</li>
+  <li>Enter title in title field </li>
+  <li>Enter Description</li>
+  <li>Enter Date</li>
+  <li>Select recurrence from dropdown</li>
+  <li>Click "Create Task" button</li>
+</ol>
+|Task is created with the correct details that were entered. The recurrency dates are automatically created with the chosen interval|                |      |
 
