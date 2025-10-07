@@ -59,16 +59,9 @@ specific qualities, such as ease of use. Feedback will be utilized to identify
 useability issues, errors, and areas of improvement.
 
 ### User-Acceptance Test Cases (Still in progress)
+[Link to User-Acceptance Spreadsheet](https://docs.google.com/spreadsheets/d/11dUF_CXD5QZ_Sd4rQwZUygLuft3XUGi06R9DEXZEtvs/edit?usp=sharing)
 | #   | TEST ITEM | TEST STEPS | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
-| --: | --------- | ---------------- | -------------- | ---- |
-|  1  |Creating Task| 
-<ol>
-  <li>Navigate to task creation</li>
-  <li>Enter title in title field </li>
-  <li>Enter Description</li>
-  <li>Enter Date</li>
-  <li>Select recurrence from dropdown</li>
-  <li>Click "Create Task" button</li>
-</ol>
-|Task is created with the correct details that were entered. The recurrency dates are automatically created with the chosen interval|                |      |
+| --: | --------- | ---------- | ---------------- | -------------- | ---- |
+|  1  |Creating Task|1. Navigate to task creation 2. Enter title 3. Enter description 4. Enter date 5. Select recurrence 6. Click "Create Task"|Task is created with the correct details that were entered. The recurrency dates are automatically created with the chosen interval|                |      |
+|  2  |Editing Task|1. Select existing task 2. Click "Edit" 3. Modify title, description, date, or recurrence 4. Click "Save Changes" |Task fields shows modified changes for all instances of that task.|
 
