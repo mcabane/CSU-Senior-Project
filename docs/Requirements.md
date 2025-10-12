@@ -31,7 +31,7 @@ show how many instances of that task will be deleted. Tasks will reflect the
 modified edits and have the correct information. Deleted tasks are no longer 
 displayed.   
 **Priority:** High    
-**Dependencies:**ID 1
+**Dependencies:** ID 1
 
 ---
 
@@ -237,11 +237,11 @@ text overlapping.
 Reminders for special events that would require earlier preparation before date.   
 **Rationale:**   
 For events like birthdays or attending weddings, additional steps like ordering 
-gifts or planning transportation like air travel might be needed. br>
+gifts or planning transportation like air travel might be needed. 
 **Fit Criterion:**    
 Special text appears along with the task on the dashboard to remind the user of 
 preparation.   
-**Priority:** Medium    
+**Priority:** Low    
 **Dependencies:** ID 7
 
 ---
@@ -255,9 +255,9 @@ With a long term time frame between creating the task and the task deadline
 information needed is likely to be forgotten. Information like passwords or 
 location of items.   
 **Fit Criterion:**   
-The notes will be minimized until the task is selected and expands when the 
-user selects view notes.   
-**Priority:** Medium    
+The notes will be viewed on separate page and are labeled by the task they 
+belong to.
+**Priority:** Low    
 **Dependencies:** ID 7
 
 ---
@@ -274,7 +274,7 @@ The user is able to add time blocks to mark when they are busy on that given
 day. It will be in a format organized by weekday or month depending on user's 
 selection of checkbox. Once the user’s schedule is added, the recommended times 
 will update to match.   
-**Priority:** Medium   
+**Priority:** Low   
 **Dependencies:** None
 
 ---
@@ -289,7 +289,7 @@ another appointment.
 **Fit Criterion:**   
 Text message appears to warn the user about the conflicting times and suggests a 
 different time/date.   
-**Priority:** Medium    
+**Priority:** Low    
 **Dependencies:** ID 17
 
 ---
@@ -409,7 +409,7 @@ do tasks earlier to lessen their load.
 **Fit Criterion:**   
 Display texts with the description of most productive month and busy month with 
 the correct months based on the user's data.   
-**Priority:** Low 
+**Priority:** Low   
 **Dependencies:** ID 7, ID 8
 
 ---

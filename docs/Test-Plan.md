@@ -30,7 +30,7 @@ requirements and is able to catch errors that a user may experience when using
 web application. 
 
 
-### Features to be Tested (Still in progress)
+### Features to be Tested 
 
 - Task Creation & Deletion (Requirements 1 & 2)
 - Task Organization (Requirement 3)
@@ -40,12 +40,20 @@ web application.
 - Task Countdown (Requirement 11)
 - Account Creation & Deletion (Requirements 20, 21, 27)
 - Responsive Design (Requirement 26)
+- Email Notifications (Requirement 19)
+- Task Search (Requirement 22)
+- Inputs and Features Descriptions (Requirement 23)
 
-### Features Not to Be Tested (Still in progress)
+### Features Not to Be Tested
 Features will not be tested as they are considered low priority and not part
 of main purpose of web application.
 - Color Customization (Requirement 12)
 - Text Size Customization (Requirement 14)
+- Settings Customization (Requirement 28)
+- Task Notes (Requirement 16)
+- Scheduling Assistance (Requirements 17 & 18)
+- Task Completion Statistics (Requirement 25)
+- Goal Tracking (Requirement 24)
 
 USER-ACCEPTANCE TEST
 --------------------
@@ -56,12 +64,22 @@ features by following steps. The steps will be general to determine if the
 interface is intuitive. The users will be observed as they perform the test. 
 User surveys will be used to receive feedback and gain measurable rating of 
 specific qualities, such as ease of use. Feedback will be utilized to identify 
-useability issues, errors, and areas of improvement.
+useability issues, errors, and areas of improvement. A/B testing will be used 
+to help determine which layouts are more user-friendly.
 
-### User-Acceptance Test Cases (Still in progress)
+### User-Acceptance Test Cases 
 [Link to User-Acceptance Spreadsheet](https://docs.google.com/spreadsheets/d/11dUF_CXD5QZ_Sd4rQwZUygLuft3XUGi06R9DEXZEtvs/edit?usp=sharing)
-| #   | TEST ITEM | TEST STEPS | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
-| --: | --------- | ---------- | ---------------- | -------------- | ---- |
-|  1  |Creating Task|1. Navigate to task creation 2. Enter title 3. Enter description 4. Enter date 5. Select recurrence 6. Click "Create Task"|Task is created with the correct details that were entered. The recurrency dates are automatically created with the chosen interval|                |      |
-|  2  |Editing Task|1. Select existing task 2. Click "Edit" 3. Modify title, description, date, or recurrence 4. Click "Save Changes" |Task fields shows modified changes for all instances of that task.|
 
+Test Deliverables
+-----------------
+
+-   Test Plan
+-   Defect/Enhancement Logs
+-   User-Acceptance Test Spreadsheet
+-   Results from user surveys (Link will be added)
+
+Schedule
+--------
+-   Oct. 20 Begin User-Acceptance Testing for applicable features
+-   Oct. 27 Conduct User Feedback Surveys
+-   Nov. 3 Based on feedback perform A/B Testing
