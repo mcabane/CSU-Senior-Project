@@ -1,0 +1,48 @@
+
+<h2> Create a new Task / Reminder </h2>
+<div class="task-creation-form">
+  <%= form_with(model: @task, url: tasks_path, local: true) do |form| %>
+      <div class="form-grid">
+        <div class="form-left">
+          <div class="form-group">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+          </div>
+        
+          <div class="form-group">
+            <%= form.label :description %>
+            <%= form.text_area :description %>
+          </div>
+        
+          <div class="form-group">
+            <%= form.label :deadline_date, "Deadline Date" %>
+            <%= form.date_select :deadline_date %>
+          </div>
+        
+          <div class="form-group">
+            <%= form.label :deadline_type, "Deadline Type" %>
+            <%= form.select :deadline_type, Task::DEADLINE_TYPES.map { |d| [d.humanize, d] } %>
+          </div>
+        
+          <div class="form-group">
+            <%= form.label :recurrence, "Recurrence Frequency" %>
+            <%= form.select :recurrence, Task::RECURRENCE_OPTIONS.map { |r| [r.humanize, r] } %>
+          </div>
+        </div>
+
+        <div class="form-right">
+          <div class="form-group">
+            <%= form.label :urgency %>
+            <%= form.select :urgency, Task::URGENCY_OPTIONS.map { |u| [u.humanize, u] } %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :category %>
+            <%= form.select :category, ['Appliance Maintenance', 'Car Maintenance', 'Documents/Licenses', 'Other'] %>
+          </div>
+          
+          <%= form.submit "Create Task" %>
+        </div>
+      </div>
+  <% end %>
+</div>

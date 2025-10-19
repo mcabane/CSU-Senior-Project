@@ -1,0 +1,30 @@
+<% if tasks.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Recurrence</th>
+        <th>Urgency</th>
+        <th>Deadline Type</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tasks.each do |task| %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.description %></td>
+          <td><%= task.deadline_date.strftime("%B %d, %Y") %></td>
+          <td><%= task.recurrence.humanize %></td>
+          <td><%= task.urgency.humanize %></td>
+          <td><%= task.deadline_type.humanize %></td>
+          <td><%= task.category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="text-muted">No tasks in this category yet.</p>
+<% end %>

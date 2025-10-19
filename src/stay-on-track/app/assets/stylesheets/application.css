@@ -1,10 +1,91 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+@import "bootstrap";
+
+.custom-navbar {
+  background-color: #FF7777;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+}
+
+h2{
+  color: #FF7777;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 2%;
+}
+
+.task-creation-form {
+  max-width: 80%;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+}
+
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-creation-form .form-group {
+  display: flex;
+  flex-direction: column;
+  color: #FF7777;
+  font-weight: 900;
+  font-family: "Quicksand", sans-serif;
+}
+
+.dashboard {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  gap: 20px;
+
+}
+
+.task-card {
+  width: 30%;
+  border-color: #000000;
+  border-width: 3px;
+  border-radius: 25px 25px 0px 0px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.task-card .top-section {
+  color:#FF7777;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-card .top-section .interaction-corner {
+  margin-left: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 0.5rem;
+}
+
+.task-card .bottom-section {
+  display: block;
+  font-family: "Quicksand", sans-serif;
+  margin-top: 1rem;
+}
+
+.task-card .bottom-section p {
+  line-height: 0.5;
+}
