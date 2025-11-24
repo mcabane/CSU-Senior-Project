@@ -6,6 +6,12 @@ Test Plan Document
   - [Testing Objectives](#testing-objectives)
   - [Features to be Tested](#features-to-be-tested)
   - [Features Not to Be Tested](#features-not-to-be-tested)
+  - [User-Acceptance Testing](#user-acceptance-test)
+  - [User-Acceptance Purpose](#user-acceptance-test-purpose)
+  - [User-Acceptance Objectives](#user-acceptance-test-objectives)
+  - [User-Acceptance Strategy](#user-acceptance-test-strategy)
+  - [User-Acceptance Test Cases](#user-acceptance-test-cases)
+  - [User-Acceptance Orientation Script](#user-acceptance-orientation-script)
 
 ### Product
 
@@ -20,8 +26,8 @@ different levels of urgency and the ability to mark if the deadline for said
 task is flexible or concrete. The dashboard will display tasks in different 
 sections: Overdue, Upcoming, and Completed. The web application will include 
 different icon statuses to show visual progression of the tasks. For example, 
-if maintenance is continuously pushed off, the appliance icon will change to 
-have a broken appearance. 
+if maintenance is overdue, the appliance icon will change to have a 
+broken appearance. 
 
 ### Testing Objectives
 
@@ -40,7 +46,6 @@ web application.
 - Task Countdown (Requirement 11)
 - Account Creation & Deletion (Requirements 20, 21, 27)
 - Responsive Design (Requirement 26)
-- Email Notifications (Requirement 19)
 - Task Search (Requirement 22)
 - Inputs and Features Descriptions (Requirement 23)
 
@@ -50,6 +55,7 @@ of main purpose of web application.
 - Color Customization (Requirement 12)
 - Text Size Customization (Requirement 14)
 - Settings Customization (Requirement 28)
+- Email Notifications (Requirement 19)
 - Task Notes (Requirement 16)
 - Scheduling Assistance (Requirements 17 & 18)
 - Task Completion Statistics (Requirement 25)
@@ -57,6 +63,20 @@ of main purpose of web application.
 
 USER-ACCEPTANCE TEST
 --------------------
+
+### User-Acceptance Test Purpose
+The purpose of the user acceptance testing is to determine that the web 
+application meets the project requirements and identify errors that users may experience when using the application for real-world use. Following each 
+testing cycle, users will complete a survey to provide feedback on ease of use, 
+visual design, and functional performance. The feedback will be used to guide improvements and future enhancements.
+
+### User-Acceptance Test Objectives 
+- Collect baseline feedback on ease of use, visual design, and functional 
+performance.
+- Refine web application based on user feedback and identified errors.
+- Conduct follow-up surveys to gather comparative feedback after refinements and measure improvement.
+- Perform final evaluation to confirm web application meets requirements and 
+satisfies users based on ratings.
 
 ### User-Acceptance Test Strategy
 The user acceptance testing will be performed by having users test specific 
@@ -70,16 +90,24 @@ to help determine which layouts are more user-friendly.
 ### User-Acceptance Test Cases 
 [Link to User-Acceptance Spreadsheet](https://docs.google.com/spreadsheets/d/11dUF_CXD5QZ_Sd4rQwZUygLuft3XUGi06R9DEXZEtvs/edit?usp=sharing)
 
+### User-Acceptance Orientation Script
+“You will be participating in iterative user acceptance testing of the Stay on 
+Track web application. This web application’s purpose is to keep track of and 
+set long-term recurring tasks. Your feedback will be used to confirm the web application meets project requirements and provides a satisfying user 
+experience. You will be testing the web application either on a personal 
+computer, laptop, or mobile phone depending on the testing scenario. After 
+performing the scenario you will answer a survey, your responses will be kept anonymous. The survey will be used to determine numerical values that will be 
+used to measure whether usability, design, and functionality improved after refinements are made. This iterative process ensures that your feedback 
+contributes to enhancing the application.” 
+
 Test Deliverables
 -----------------
-
 -   Test Plan
--   Defect/Enhancement Logs
 -   User-Acceptance Test Spreadsheet
--   Results from user surveys (Link will be added)
+-   Report of results from user surveys and changes that followed (Link will be added)
 
 Schedule
 --------
--   Oct. 20 Begin User-Acceptance Testing for applicable features
--   Oct. 27 Conduct User Feedback Surveys
--   Nov. 3 Based on feedback perform A/B Testing
+2 Week Cycles:
+- Week 1: User Acceptance Testing & Surveys
+- Week 2: Feedback Analysis and refinement
