@@ -66,15 +66,18 @@ USER-ACCEPTANCE TEST
 
 ### User-Acceptance Test Purpose
 The purpose of the user acceptance testing is to determine that the web 
-application meets the project requirements and identify errors that users may experience when using the application for real-world use. Following each 
+application meets the project requirements and identify errors that users may 
+experience when using the application for real-world use. Following each 
 testing cycle, users will complete a survey to provide feedback on ease of use, 
-visual design, and functional performance. The feedback will be used to guide improvements and future enhancements.
+visual design, and functional performance. The feedback will be used to guide 
+improvements and future enhancements.
 
 ### User-Acceptance Test Objectives 
 - Collect baseline feedback on ease of use, visual design, and functional 
 performance.
 - Refine web application based on user feedback and identified errors.
-- Conduct follow-up surveys to gather comparative feedback after refinements and measure improvement.
+- Conduct follow-up surveys to gather comparative feedback after refinements and 
+measure improvement.
 - Perform final evaluation to confirm web application meets requirements and 
 satisfies users based on ratings.
 
@@ -84,27 +87,114 @@ features by following steps. The steps will be general to determine if the
 interface is intuitive. The users will be observed as they perform the test. 
 User surveys will be used to receive feedback and gain measurable rating of 
 specific qualities, such as ease of use. Feedback will be utilized to identify 
-useability issues, errors, and areas of improvement. A/B testing will be used 
+usability issues, errors, and areas of improvement. A/B testing will be used 
 to help determine which layouts are more user-friendly.
 
+Test participants should have the following skills, experience, and characteristics:
+- No specific gender or age.
+- Willingness to answer surveys.
+- Able to provide follow-up testing and surveys for duration of testing.
+- Normal or corrected-to-normal color vision.
+- Experienced using either desktop, laptop, tablet, or mobile phone.
+
+Compensation — There is no compensation for participants. 
 ### User-Acceptance Test Cases 
 [Link to User-Acceptance Spreadsheet](https://docs.google.com/spreadsheets/d/11dUF_CXD5QZ_Sd4rQwZUygLuft3XUGi06R9DEXZEtvs/edit?usp=sharing)
 
 ### User-Acceptance Orientation Script
 “You will be participating in iterative user acceptance testing of the Stay on 
-Track web application. This web application’s purpose is to keep track of and 
-set long-term recurring tasks. Your feedback will be used to confirm the web application meets project requirements and provides a satisfying user 
-experience. You will be testing the web application either on a personal 
+Track web application. The web application’s purpose is to keep track of and 
+set long-term recurring tasks. Your feedback will be used to confirm the web 
+application meets the project requirements and provides a satisfying user 
+experience. You will be testing the web application either on a desktop 
 computer, laptop, or mobile phone depending on the testing scenario. After 
-performing the scenario you will answer a survey, your responses will be kept anonymous. The survey will be used to determine numerical values that will be 
-used to measure whether usability, design, and functionality improved after refinements are made. This iterative process ensures that your feedback 
+performing the scenario you will answer a survey, your responses will be kept 
+anonymous. The survey will be used to determine numerical values that will be 
+used to measure whether usability, design, and functionality improved after 
+refinements are made. This iterative process ensures that your feedback 
 contributes to enhancing the application.” 
+
+### User feedback Questions:
+
+Section 1: Ease of Use
+- How would you rate the navigation of the web application?
+  - 1 - Very difficult to navigate
+  - 10 - Very easy to navigate
+
+- How intuitive did you find the web application to be?
+  - 1 - Not intuitive, I was confused on how the web application worked.
+  - 10 - Very intuitive, I could determine how to complete tasks without 
+          confusion.
+
+Section 2: Visual design
+- How would you rate the following statement? The layout of the web application 
+  was very appealing.
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+- How would you rate the following statement? The design elements enhanced 
+  usability. (Fonts, colors, spacing, etc.)
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+- How would you rate the following statement? The interface felt modern and 
+  professional.
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+Section 3: Functionality
+- How would you rate the following statement? Features worked as expected 
+  without errors.
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+- How would you rate the following statement? I was able to accomplish the 
+  intended tasks successfully.
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+Section 4: User Satisfaction 
+- How would you rate the following statement? I would consider using this 
+  application in real-world scenarios.
+  - 1 - Strongly disagree
+  - 10 - Strongly agree
+
+Section 5: Open Feedback (Optional)
+- What did you like the most about this web application?
+- What did you dislike the least about this web application?
+- What additional features would you like this application to have?
+- What improvements would you suggest?
+
+### Demographic Questionnaire:
+- Age:
+- Occupation: 
+
+- Primary Device used:
+  - Phone
+  - Tablet
+  - Laptop
+  - Desktop
+
+- Please list which device you primarily use: (Example: IPhone X, or monitor size)
+
+- How often do you use technology?
+  - 1 - Not Often
+  - 2 - Rarely 
+  - 3 - Sometimes
+  - 4 - Often
+  - 5 - Very Often
+
+- Have you used task management or productivity apps before or currently use them?
+  - No
+  - Yes
+
+- If you answered yes to the previous question, which ones have you used or currently using?
 
 Test Deliverables
 -----------------
 -   Test Plan
 -   User-Acceptance Test Spreadsheet
--   Report of results from user surveys and changes that followed (Link will be added)
+-   Report of results from user surveys and changes that followed (Link will be added when testing begins)
 
 Schedule
 --------
