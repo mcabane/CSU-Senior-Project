@@ -48,13 +48,43 @@
 
       <!-- Right: Other Links -->
       <div class="col-4 d-flex justify-content-end">
-        <%= link_to "New Task", new_task_path, class: "nav-link text-white me-3" %>
-        <%= link_to "Settings", settings_path, class: "nav-link text-white me-3" %>
-        <%= link_to "Login", login_path, class: "nav-link text-white" %>
+        <% if logged_in? %>
+          <%= link_to "New Task", new_task_path, class: "nav-link text-white me-3" %>
+          <%= link_to "Settings", settings_path, class: "nav-link text-white me-3" %>
+          <%= link_to "User Account", account_path, class: "nav-link text-white me-3" %>
+          <%= link_to "Log out", logout_path, data: {"turbo-method": :delete }, class: "nav-link text-white me-3" %>
+        <% else %>
+          <%= link_to "Login", login_path, class: "nav-link text-white" %>
+        <% end %>
       </div>
-
     </div>
+
+  <div class="mobile-nav">
+    <div class="brand">
+      <%= link_to "Stay on Track", root_path, class: "navbar-brand text-white fw-bold" %>
+    </div>
+
+    <% if logged_in? %>
+      <%= link_to "New Task", new_task_path, class: "nav-link text-white me-3" %>
+    <% end %>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <% if logged_in? %>
+          <li><%= link_to "Settings", settings_path, class: "dropdown-item" %></li>
+          <li><%= link_to "User Account", account_path, class: "dropdown-item" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Log out", logout_path, data: { "turbo-method": :delete }, class: "dropdown-item" %></li>
+        <% else %>
+          <li><%= link_to "Login", login_path, class: "dropdown-item" %></li>
+        <% end %>
+      </ul>
+    </li>
   </div>
+
 </nav>
     <%= yield %>
   </body>

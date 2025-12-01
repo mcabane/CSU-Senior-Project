@@ -8,5 +8,10 @@ class User < ApplicationRecord
                     uniqueness: true
 
     has_secure_password
-    validates :password, presence: true, length: {minimum: 6}
+    validates :password, presence: true, length: {minimum: 6}, if: :password_required?
+    
+    def password_required?
+        new_record? || !password.blank?
+    end
+
 end

@@ -26,8 +26,23 @@
         
           <div class="form-group">
             <%= form.label :recurrence, "Recurrence Frequency" %>
-            <%= form.select :recurrence, Task::RECURRENCE_OPTIONS.map { |r| [r.humanize, r] } %>
-          </div>
+           <%= form.select :recurrence,
+              Task::RECURRENCE_OPTIONS.map { |r| [r.humanize, r] },
+              {}, { id: "task_recurrence" } %>
+
+
+            <div id="custom_recurrence_section">
+              <%= form.number_field :custom_recurrence_number,
+                min: 1,
+                placeholder: "Enter number",
+                class: "form-group" %>
+
+              <%= form.select :custom_recurrence_unit,
+                    [["Days", "days"], ["Weeks", "weeks"], ["Months", "months"], ["Years", "years"]],
+                    {}, { class: "form-group" } %>
+  </div>
+
+            </div>
         </div>
 
         <div class="form-right">
@@ -38,11 +53,51 @@
 
           <div class="form-group">
             <%= form.label :category %>
-            <%= form.select :category, ['Appliance Maintenance', 'Car Maintenance', 'Documents/Licenses', 'Other'] %>
-          </div>
-          
+            <%= form.select :category, ['Appliance Maintenance', 'Car Maintenance', 'Documents / Licenses', 'Misc.', 'Custom'] %>
+            <%= form.text_field :custom_category,
+              placeholder: "Enter new category name",
+              id: "custom_category_field"%>
+
+            </div>
+         
           <%= form.submit "Create Task" %>
         </div>
       </div>
   <% end %>
 </div>
+
+<script>
+  document.addEventListener("turbo:load", function() {
+    const categorySelect = document.querySelector("#task_category");
+    const categoryCustom = document.querySelector("#custom_category_field");
+    const recurrenceSelect = document.querySelector("#task_recurrence");
+    const recurrenceCustom = document.querySelector("#custom_recurrence_section");
+
+    function toggle(selectEl, fieldEl, customValue = "custom") {
+      if (!selectEl || !fieldEl) return;
+      
+     const show = (selectEl.value.toLowerCase() === customValue.toLowerCase());
+
+      fieldEl.style.display = show ? "block" : "none";
+      if (!show) {
+        fieldEl.querySelectorAll("input, select").forEach(el => el.value = "");
+      }
+    }
+
+    function runToggles() {
+      toggle(categorySelect, categoryCustom);
+      toggle(recurrenceSelect, recurrenceCustom);
+    }
+
+    runToggles();
+
+    // Toggle on change
+    categorySelect?.addEventListener("change", () => toggle(categorySelect, categoryCustom));
+    recurrenceSelect?.addEventListener("change", () => toggle(recurrenceSelect, recurrenceCustom));
+  
+  });
+
+
+</script>
+
+
