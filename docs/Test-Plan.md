@@ -100,7 +100,7 @@ Test participants should have the following skills, experience, and characterist
 - Experienced using either desktop, laptop, tablet, or mobile phone.
 
 Compensation — There is no compensation for participants. 
-### User-Acceptance Test Cases 
+### User-Acceptance Test Cases & Scenarios
 [Link to User-Acceptance Spreadsheet](https://docs.google.com/spreadsheets/d/11dUF_CXD5QZ_Sd4rQwZUygLuft3XUGi06R9DEXZEtvs/edit?usp=sharing)
 
 ### User-Acceptance Orientation Script
@@ -121,45 +121,45 @@ contributes to enhancing the application.”
 Section 1: Ease of Use
 - How would you rate the navigation of the web application?
   - 1 - Very difficult to navigate
-  - 10 - Very easy to navigate
+  - 9 - Very easy to navigate
 
 - How intuitive did you find the web application to be?
   - 1 - Not intuitive, I was confused on how the web application worked.
-  - 10 - Very intuitive, I could determine how to complete tasks without 
+  - 9 - Very intuitive, I could determine how to complete tasks without 
           confusion.
 
 Section 2: Visual design
 - How would you rate the following statement? The layout of the web application 
   was very appealing.
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 - How would you rate the following statement? The design elements enhanced 
   usability. (Fonts, colors, spacing, etc.)
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 - How would you rate the following statement? The interface felt modern and 
   professional.
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 Section 3: Functionality
 - How would you rate the following statement? Features worked as expected 
   without errors.
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 - How would you rate the following statement? I was able to accomplish the 
   intended tasks successfully.
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 Section 4: User Satisfaction 
 - How would you rate the following statement? I would consider using this 
   application in real-world scenarios.
   - 1 - Strongly disagree
-  - 10 - Strongly agree
+  - 9 - Strongly agree
 
 Section 5: Open Feedback (Optional)
 - What did you like the most about this web application?
@@ -198,8 +198,4 @@ Test Deliverables
 -   User-Acceptance Test Spreadsheet
 -   Report of results from user surveys and changes that followed (Link will be added when testing begins)
 
-Schedule
---------
-2 Week Cycles:
-- Week 1: User Acceptance Testing & Surveys
-- Week 2: Feedback Analysis and refinement
+
