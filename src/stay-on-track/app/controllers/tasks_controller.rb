@@ -21,6 +21,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = current_user.tasks.find(params[:id])
+  end
+
   def update
     @task = current_user.tasks.find(params[:id])
     attrs = task_params.to_h

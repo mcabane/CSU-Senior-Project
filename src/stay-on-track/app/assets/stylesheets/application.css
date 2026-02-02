@@ -64,7 +64,7 @@ h2{
   border-style: solid;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 1%;
 }
 
@@ -97,6 +97,10 @@ h2{
 
 .task-card .bottom-section p {
   line-height: 0.5;
+}
+
+.description-text{
+   line-height: 1.4 !important;
 }
 
 .user-form {
@@ -141,6 +145,7 @@ h2{
 }
 
 .countdown-section {
+  margin-top: auto;
   height: 50px;
   border-radius: 8px;
   background-color: #FF7777;
@@ -154,6 +159,14 @@ h2{
   color: #ffffff;
   font-weight: 900;
   font-family: "Quicksand", sans-serif;
+}
+
+.upcoming-section .countdown-section {
+    background-color: #B277FF;
+}
+
+.completed-section .countdown-section {
+  background-color: #359F63;
 }
 
 .dashboard .overdue {

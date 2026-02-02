@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy 
+    terminate_session 
+    Current.user.destroy
+    redirect_to root_path, "Your Account has been deleted."
+  end
+
   private
     def  user_params
       params.require(:user).permit(:name, :email, :password, 

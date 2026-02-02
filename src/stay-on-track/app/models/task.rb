@@ -3,9 +3,13 @@ class Task < ApplicationRecord
   URGENCY_OPTIONS = %w[low medium high]
   DEADLINE_TYPES = %w[flexible concrete]
 
+  validates :title, length: {maximum: 25}
+  validates :description, length: {maximum: 255}
+  validates :custom_category, length: { maximum: 25 }, allow_blank: true
   validates :recurrence, inclusion: { in: RECURRENCE_OPTIONS }
   validates :urgency, inclusion: { in: URGENCY_OPTIONS }
   validates :deadline_type, inclusion: { in: DEADLINE_TYPES }
+  
   # Virtual attributes, so not to be stored in DB
   attr_accessor :custom_category, :custom_recurrence_number, :custom_recurrence_unit
 
@@ -47,7 +51,7 @@ class Task < ApplicationRecord
 
   def deadline_countdown
     return nil unless deadline_date
-    (deadline_date.to_date - Date.today).to_i
+    (deadline_date.to_date - Date.today).to_i.abs
   end
 
    def set_completed_at_timestamp

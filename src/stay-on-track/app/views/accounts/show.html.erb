@@ -4,4 +4,9 @@
 <p><strong>Display Email:</strong> <%= current_user.email %></p>
 
 <%= link_to "Edit Account", edit_account_path, class: "button" %>
+
+<%= button_to "Delete account", account_path, method: :delete, data: { 
+  turbo_confirm: "Are you sure? Account will be permanently deleted." 
+} %>
+
 </div>

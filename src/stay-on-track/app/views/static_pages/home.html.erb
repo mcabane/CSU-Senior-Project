@@ -10,6 +10,7 @@
           <h3> <%= task.category %></span> </h3>
 
           <div class="interaction-corner">
+            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
             <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
               <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
             <% end %>
@@ -19,8 +20,11 @@
         </div>
 
         <div class="bottom-section">
-          <p> Task: <%= task.title %></p>
-          <p><strong> Deadline: <%= task.deadline_date.strftime("%B %d, %Y") %></strong></p>
+          <p><strong> Task: </strong><%= task.title %></p>
+          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+          <p><strong> Urgency: </strong><%= task.urgency %></p>
+          <p class="description-text"><%= task.description %> </p>
+
         </div>
 
         <div class="countdown-section">
@@ -30,6 +34,8 @@
       </div>
     <% end %>
   </section>
+
+  <div class ="upcoming-section">
   <h2 class="upcoming">Upcoming Tasks</h2>
   <section class="task_section">
     <% (@upcoming_tasks || []).each do |task| %>
@@ -39,17 +45,20 @@
           <h3> <%= task.category %></span> </h3>
 
           <div class="interaction-corner">
+            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
             <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
               <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
             <% end %>
 
-            <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+            <%= button_to "Delete", task_path(task), method: :delete, data: { turbo_confirm: "Are you sure you want to delete task?" }, class: "custom-delete" %>
           </div>
         </div>
 
         <div class="bottom-section">
-          <p> Task: <%= task.title %></p>
-          <p><strong> Deadline: <%= task.deadline_date.strftime("%B %d, %Y") %></strong></p>
+          <p><strong> Task: </strong><%= task.title %></p>
+          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+          <p><strong> Urgency: </strong><%= task.urgency %></p>
+          <p class="description-text"><%= task.description %> </p>
         </div>
 
         <div class="countdown-section">
@@ -58,7 +67,9 @@
       </div>
     <% end %>
   </section>
-    
+  </div>
+
+  <div class="completed-section">
   <h2 class="completed">Completed Tasks</h2>
   <section class="task_section">
     <% (@completed_tasks || []).each do |task| %>
@@ -68,6 +79,7 @@
           <h3> <%= task.category %></span> </h3>
 
           <div class="interaction-corner">
+            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
             <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
               <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
             <% end %>
@@ -77,11 +89,17 @@
         </div>
 
         <div class="bottom-section">
-          <p> Task: <%= task.title %></p>
-          <p><strong> Deadline: <%= task.deadline_date.strftime("%B %d, %Y") %></strong></p>
-
+          <p><strong> Task: </strong><%= task.title %></p>
+          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+          <p><strong> Urgency: </strong><%= task.urgency %></p>
+          <p class="description-text"><%= task.description %> </p>
+        </div>
+        
+        <div class="countdown-section">
+          <p>Completed on: <%=task.completed_at.strftime("%B %d, %Y")%></p>
         </div>
       </div>
     <% end %>
   </section>
+  </div>
 </div>

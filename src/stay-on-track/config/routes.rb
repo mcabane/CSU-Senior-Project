@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get "accounts/show"
-  get "accounts/edit"
-  get "accounts/update"
   get "sessions/new"
   resources :users, only: [:new, :create]
 
@@ -27,6 +24,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :tasks
   root "static_pages#home"
-  resource :account, only: [:show, :edit, :update]
+  resource :account, only: [:show, :edit, :update, :destroy]
 
 end
