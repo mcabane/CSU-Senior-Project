@@ -1,105 +1,305 @@
-<h2>User Dashboard</h2>
-<div class="dashboard">
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "theme-dark") {
+      document.documentElement.classList.add("theme-dark");
+    }
+  })();
+</script>
 
+<div class="dashboard">
+<% flash.each do |key, message| %>
+  <div class="flash">
+    <%= message %>
+  </div>
+<% end %>
+
+<div class="theme-toggle-section">
+  <button id="theme-toggle" class="switch"></button>
+</div>
+
+<div class="counter">
+  <a href="#overdue-section"  data-turbo="false" class="section-link">
+    <div class="overdue-counter">
+      <h4> Overdue Tasks </h4>
+      <h4> <%= @overdue_tasks.count%></h4>
+    </div>
+  </a>
+
+  <a href="#upcoming-section"  data-turbo="false" class="section-link">
+    <div class="upcoming-counter">
+      <h4> Upcoming Tasks </h4>
+      <h4> <%= @upcoming_tasks.count%></h4>
+    </div>
+  </a>
+
+  <a href="#completed-section" class="section-link">
+    <div class="completed-counter">
+      <h4> Completed Tasks </h4>
+      <h4> <%= @completed_tasks.count%></h4>
+    </div>
+  </a>
+
+</div>
+
+<%= link_to new_task_path, class: "overlay-button" do %>
+  <span class="icon">
+  <%= render inline: Rails.root.join("app/assets/images/plus-icon.svg").read %>
+  </span>
+
+  <span class="icon-label">
+    Create Task
+  </span>
+  <% end %>
+
+  <div id="overdue-section">
   <h2 class="overdue">Overdue Tasks</h2>
   <section class="task_section">
     <% (@overdue_tasks || []).each do |task| %>
 
-      <div class="task-card">
+      <div class="task-card-alt">
         <div class="top-section">
+
           <h3> <%= task.category %></span> </h3>
-
           <div class="interaction-corner">
-            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
-            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
-              <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <%= link_to edit_task_path(task), class: "edit-button" do %>
+              Edit
+              <span class="icon">
+                <%= render inline: Rails.root.join("app/assets/images/pencil-icon-color.svg").read %>
+              </span>
             <% end %>
-
-            <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+            <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <% end %>
           </div>
+
+        </div>
+
+        <div class="content-section">
+
+          <div class="left-section">
+            <p><strong> Task: <%= task.title %></strong></p>
+            <div class="description-wrapper">
+              <p class="description-text">Description: <%= task.description %> </p>
+            </div>
+          </div>
+
+          <div class="right-section">
+            <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+
+            <div class="countdown-section">
+              <p><%= pluralize(task.deadline_countdown, 'day') %> past deadline</p>
+            </div>
+
+          </div>
+
         </div>
 
         <div class="bottom-section">
-          <p><strong> Task: </strong><%= task.title %></p>
-          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
-          <p><strong> Urgency: </strong><%= task.urgency %></p>
-          <p class="description-text"><%= task.description %> </p>
+
+          <div class="left-section">
+            <p><strong> Urgency: <%= task.urgency %> </strong>
+                <% count =
+                  case task.urgency
+                  when "high" then 3
+                  when "medium" then 2
+                  when "low" then 1
+                  end
+                %>
+              <% count.times do %>
+                <span class="urgency-circle <%= task.urgency %>"></span>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="right-section">
+              <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+          </div>
 
         </div>
 
-        <div class="countdown-section">
-          <p><%= pluralize(task.deadline_countdown, 'day') %> past deadline</p>
-        </div>
-        
       </div>
     <% end %>
   </section>
+  </div>
 
-  <div class ="upcoming-section">
+  <div id="upcoming-section" class ="upcoming-section">
   <h2 class="upcoming">Upcoming Tasks</h2>
   <section class="task_section">
     <% (@upcoming_tasks || []).each do |task| %>
-
-      <div class="task-card">
+      <div class="task-card-alt">
         <div class="top-section">
+
           <h3> <%= task.category %></span> </h3>
-
           <div class="interaction-corner">
-            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
-            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
-              <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <%= link_to edit_task_path(task), class: "edit-button" do %>
+              Edit
+              <span class="icon">
+                <%= render inline: Rails.root.join("app/assets/images/pencil-icon-color.svg").read %>
+              </span>
             <% end %>
-
-            <%= button_to "Delete", task_path(task), method: :delete, data: { turbo_confirm: "Are you sure you want to delete task?" }, class: "custom-delete" %>
+            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+            <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <% end %>
           </div>
+
+        </div>
+
+        <div class="content-section">
+
+          <div class="left-section">
+            <p><strong> Task: <%= task.title %></strong></p>
+            <p class="description-text">Description: <%= task.description %> </p>
+
+          </div>
+
+          <div class="right-section">
+            <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+
+            <div class="countdown-section">
+              <p><%= pluralize(task.deadline_countdown, 'day') %> until deadline</p>
+            </div>
+
+          </div>
+
         </div>
 
         <div class="bottom-section">
-          <p><strong> Task: </strong><%= task.title %></p>
-          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
-          <p><strong> Urgency: </strong><%= task.urgency %></p>
-          <p class="description-text"><%= task.description %> </p>
+
+         <div class="left-section">
+            <p><strong> Urgency: <%= task.urgency %> </strong>
+                <% count =
+                  case task.urgency
+                  when "high" then 3
+                  when "medium" then 2
+                  when "low" then 1
+                  end
+                %>
+              <% count.times do %>
+                <span class="urgency-circle <%= task.urgency %>"></span>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="right-section">
+              <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+          </div>
+
         </div>
 
-        <div class="countdown-section">
-          <p><%= pluralize(task.deadline_countdown, 'day') %> left</p>
-        </div>
       </div>
     <% end %>
   </section>
-  </div>
 
-  <div class="completed-section">
+  <div id="completed-section" class="completed-section">
   <h2 class="completed">Completed Tasks</h2>
   <section class="task_section">
     <% (@completed_tasks || []).each do |task| %>
-
-      <div class="task-card">
+      <div class="task-card-alt">
         <div class="top-section">
+
           <h3> <%= task.category %></span> </h3>
-
           <div class="interaction-corner">
-            <%= link_to "Edit", edit_task_path(task), class: "edit-button" %>
-            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
-              <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <%= link_to edit_task_path(task), class: "edit-button" do %>
+              Edit
+              <span class="icon">
+                <%= render inline: Rails.root.join("app/assets/images/pencil-icon-color.svg").read %>
+              </span>
             <% end %>
-
-            <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+            <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+            <%= f.check_box :completed, { class: "custom-check", checked: task.completed, onchange: 'this.form.submit();' }, 'true', 'false' %>
+            <% end %>
           </div>
+
+        </div>
+
+        <div class="content-section">
+
+          <div class="left-section">
+            <p><strong> Task: <%= task.title %></strong></p>
+            <p class="description-text">Description: <%= task.description %> </p>
+
+          </div>
+
+          <div class="right-section">
+            <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
+
+           <div class="countdown-section">
+            <p>Completed on: <%=task.completed_at.strftime("%m/%d/%Y")%></p>
+          </div>
+
+          </div>
+
         </div>
 
         <div class="bottom-section">
-          <p><strong> Task: </strong><%= task.title %></p>
-          <p><strong> Deadline: </strong><%= task.deadline_date.strftime("%B %d, %Y") %></p>
-          <p><strong> Urgency: </strong><%= task.urgency %></p>
-          <p class="description-text"><%= task.description %> </p>
+
+          <div class="left-section">
+            <p><strong> Urgency: <%= task.urgency %> </strong>
+                <% count =
+                  case task.urgency
+                  when "high" then 3
+                  when "medium" then 2
+                  when "low" then 1
+                  end
+                %>
+              <% count.times do %>
+                <span class="urgency-circle <%= task.urgency %>"></span>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="right-section">
+              <%= button_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "custom-delete" %>
+          </div>
+
         </div>
-        
-        <div class="countdown-section">
-          <p>Completed on: <%=task.completed_at.strftime("%B %d, %Y")%></p>
-        </div>
+
       </div>
     <% end %>
   </section>
-  </div>
 </div>
+
+<script>
+  document.addEventListener("turbo:load", () => {
+    const flashes = document.querySelectorAll(".flash");
+    const toggle = document.getElementById("theme-toggle");
+    
+    flashes.forEach(flash => {
+      setTimeout(() => {
+        flash.classList.add("flash-hide");
+      }, 2500);
+      setTimeout(() => {
+        flash.remove();
+      }, 3500); 
+    });
+  
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "theme-dark") {
+      document.documentElement.classList.add("theme-dark");
+      toggle.textContent = "Light Mode";
+    } else {
+      toggle.textContent = "Dark Mode";
+    }
+
+    const newToggle = toggle.cloneNode(true);
+    toggle.replaceWith(newToggle);
+
+      newToggle.addEventListener("click", () => {
+    const darkModeOn = document.documentElement.classList.contains("theme-dark");
+
+    if (darkModeOn) {
+    document.documentElement.classList.remove("theme-dark");
+    newToggle.textContent = "Dark Mode";
+    localStorage.setItem("theme", "theme-light");
+    } else {
+    document.documentElement.classList.add("theme-dark");
+    newToggle.textContent = "Light Mode";
+    localStorage.setItem("theme", "theme-dark");
+    }
+
+    });
+
+  });
+</script>

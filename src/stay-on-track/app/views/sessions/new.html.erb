@@ -1,6 +1,15 @@
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "theme-dark") {
+      document.documentElement.classList.add("theme-dark");
+    }
+  })();
+</script>
+
 <% provide(:title, "Log in") %>
 
-<h2> Log In </h2>
+<h1> Log In </h1>
 
 <div class="user-form">
     <%= form_with(url: login_path, scope: :session) do |f| %>

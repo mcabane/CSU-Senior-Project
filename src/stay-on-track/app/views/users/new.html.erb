@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign-Up') %>
-<h2> Sign Up </h2>
+<h1> Sign Up </h1>
 <div class="user-form">
     <%= form_with(model: @user) do |f| %>
         <div class="form-group">
@@ -27,3 +27,13 @@
        
     <% end %>
 </div>
+
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

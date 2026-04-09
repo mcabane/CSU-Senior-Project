@@ -1,7 +1,16 @@
-<h2> Edit Task </h2>
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "theme-dark") {
+      document.documentElement.classList.add("theme-dark");
+    }
+  })();
+</script>
+
+<h1> Edit Task </h1>
 <div class="task-creation-form">
   <%= form_with(model: @task, local: true) do |form| %>
-      <div class="form-grid">
+        <div class="form-grid">
         <div class="form-left">
           <div class="form-group">
             <%= form.label :title, maxlength: 50 %>
@@ -15,33 +24,54 @@
         
           <div class="form-group">
             <%= form.label :deadline_date, "Deadline Date: Date of first occurrence." %>
-            <%= form.date_select :deadline_date %>
+            <div id="deadline_date_check">
+              <%= form.date_select :deadline_date %>
+            </div>
           </div>
         
           <div class="form-group">
-            <%= form.label :deadline_type, "Deadline Type" %>
+            <%= form.label :deadline_type, "Change Date" %>
             <%= form.select :deadline_type, Task::DEADLINE_TYPES.map { |d| [d.humanize, d] } %>
           </div>
-        
+
           <div class="form-group">
-            <%= form.label :recurrence, "Recurrence Frequency" %>
-           <%= form.select :recurrence,
-              Task::RECURRENCE_OPTIONS.map { |r| [r.humanize, r] },
-              {}, { id: "task_recurrence" } %>
+            <%= form.label :recurrence_type, "Recurrence Type" %>
+            <%= form.select :recurrence_type, Task::RECURRENCE_TYPES.map { |d| [d.humanize, d] } %>
+          </div>
+        
+          <div id="weekday_recurrence_section">
+            <div class="form-group">
+              <%= form.label :recurrence, "Recurrence Frequency" %>
+              <%= form.select :recurrence,
+                Task::RECURRENCE_OPTIONS.map { |r| [r.humanize, r] },
+                {}, { id: "task_recurrence" } %>
 
 
             <div id="custom_recurrence_section">
+
+              <%= form.select :custom_recurrence_unit,
+                    [["Days", "days"], ["Weeks", "weeks"], ["Months", "months"], ["Years", "years"]],
+                    {prompt: "Time Unit"}, { class: "form-group" } %>
               <%= form.number_field :custom_recurrence_number,
                 min: 1,
                 placeholder: "Enter number",
                 class: "form-group" %>
-
-              <%= form.select :custom_recurrence_unit,
-                    [["Days", "days"], ["Weeks", "weeks"], ["Months", "months"], ["Years", "years"]],
-                    {}, { class: "form-group" } %>
-  </div>
-
             </div>
+
+            <%= fields_for :weekday_recurrence do |ff| %>
+                <div class="form-group">
+                  <%= form.label :weekday_recurrence, "Repeat on:" %>
+
+                  <% Date::DAYNAMES.each_with_index do |day, i| %>
+                    <label>
+                      <%= check_box_tag "task[weekday_recurrence][]", i %>
+                      <%= day %>
+                    </label>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
 
         <div class="form-right">
@@ -52,18 +82,29 @@
 
           <div class="form-group">
             <%= form.label :category %>
-            <%= form.select :category, ['Appliance Maintenance', 'Car Maintenance', 'Documents / Licenses', 'Misc.', 'Custom'] %>
+            <%= form.select :category, (Task::DEFAULT_CATEGORIES + current_user.tasks.distinct.pluck(:category) + ['Custom']).uniq %>
             <%= form.text_field :custom_category,
               placeholder: "Enter new category name",
               id: "custom_category_field",
               maxlength: 25 %>
 
             </div>
-         
-          <%= form.submit "Update Task" %>
+          <%= form.submit "Update Task", class: "primary-button" %>
         </div>
       </div>
   <% end %>
+
+<% if @task.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>There were problems with your submission</h4>
+    <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 </div>
 
 <script>
@@ -72,6 +113,8 @@
     const categoryCustom = document.querySelector("#custom_category_field");
     const recurrenceSelect = document.querySelector("#task_recurrence");
     const recurrenceCustom = document.querySelector("#custom_recurrence_section");
+    const deadlineType = document.querySelector("#task_deadline_type");
+    const deadlineDateFields = document.querySelectorAll("#deadline_date_check select");
 
     function toggle(selectEl, fieldEl, customValue = "custom") {
       if (!selectEl || !fieldEl) return;
@@ -84,16 +127,29 @@
       }
     }
 
+    function toggleDeadlineDate() {
+      const isConcrete = deadlineType.value === "concrete";
+
+      deadlineDateFields.forEach(field => {
+        field.disabled = isConcrete;
+        field.style.backgroundColor = isConcrete ? "#e9ecef" : "";
+        field.style.cursor = isConcrete ? "not-allowed" : "pointer";
+      });
+    }
+
     function runToggles() {
       toggle(categorySelect, categoryCustom);
       toggle(recurrenceSelect, recurrenceCustom);
+      toggleDeadlineDate();
+
     }
 
     runToggles();
 
-    // Toggle on change
     categorySelect?.addEventListener("change", () => toggle(categorySelect, categoryCustom));
     recurrenceSelect?.addEventListener("change", () => toggle(recurrenceSelect, recurrenceCustom));
+    deadlineType?.addEventListener("change", toggleDeadlineDate);
+
   
   });
 

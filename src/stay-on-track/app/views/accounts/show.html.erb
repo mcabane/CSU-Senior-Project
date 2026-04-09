@@ -1,12 +1,22 @@
-<h2> User Account </h2>
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "theme-dark") {
+      document.documentElement.classList.add("theme-dark");
+    }
+  })();
+</script>
+
+<h1> User Account </h1>
 <div class="user-form">
-<p><strong>Display Name:</strong> <%= current_user.name %></p>
-<p><strong>Display Email:</strong> <%= current_user.email %></p>
+  <p><strong>Display Name:</strong> <%= current_user.name %></p>
+  <p><strong>Display Email:</strong> <%= current_user.email %></p>
 
-<%= link_to "Edit Account", edit_account_path, class: "button" %>
+  <div class="buttons-section">
+    <%= link_to "Edit Account", edit_account_path, class: "button" %>
 
-<%= button_to "Delete account", account_path, method: :delete, data: { 
-  turbo_confirm: "Are you sure? Account will be permanently deleted." 
-} %>
-
+    <%= button_to "Delete account", account_path, method: :delete, data: { 
+      turbo_confirm: "Are you sure? Account will be permanently deleted." 
+    } , class: "custom-delete"%>
+  </div>
 </div>
