@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <%= favicon_link_tag "Favicon.svg", type: "image/svg+xml" %>
+    
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Font -->
@@ -22,10 +24,6 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -34,28 +32,20 @@
   <body>
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container-fluid">
-    <div class="row w-100 align-items-center">
-      
-      <!-- Left: Home -->
-      <div class="col-4 d-flex justify-content-start">
-        <%= link_to "Home", root_path, class: "nav-link text-white" %>
-      </div>
-      
-      <!-- Center: Brand -->
-      <div class="col-4 d-flex justify-content-center">
-        <%= link_to "Stay on Track", root_path, class: "navbar-brand text-white fw-bold" %>
-      </div>
 
-      <!-- Right: Other Links -->
-      <div class="col-4 d-flex justify-content-end">
-        <% if logged_in? %>
-          <%= link_to "User Account", account_path, class: "nav-link text-white me-3" %>
-          <%= link_to "Log out", logout_path, data: {"turbo-method": :delete }, class: "nav-link text-white me-3" %>
-        <% else %>
-          <%= link_to "Login", login_path, class: "nav-link text-white" %>
-        <% end %>
-      </div>
+    <%= link_to "Home", root_path, class: "nav-link text-white me-auto" %>
+
+    <%= link_to "Stay on Track", root_path, class: "navbar-brand text-white fw-bold mx-auto" %>
+
+    <div class ="right-links">
+      <% if logged_in? %>
+        <%= link_to "User Account", account_path, class: "nav-link text-white ms-auto me-3" %>
+        <%= link_to "Log out", logout_path, data: {"turbo-method": :delete }, class: "nav-link text-white" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "nav-link text-white ms-auto" %>
+      <% end %>
     </div>
+  </div>
 
   <div class="mobile-nav">
     <div class="brand">

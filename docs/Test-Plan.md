@@ -48,7 +48,6 @@ web application.
 - Task Countdown (Requirement 11)
 - Account Creation & Deletion (Requirements 20, 21, 27)
 - Responsive Design (Requirement 26)
-- Task Search (Requirement 22)
 - Inputs and Features Descriptions (Requirement 23)
 
 ### Features Not to Be Tested
@@ -56,6 +55,7 @@ Features will not be tested as they are considered low priority and not part
 of main purpose of web application.
 - Color Customization (Requirement 12)
 - Text Size Customization (Requirement 14)
+- Task Search (Requirement 22)
 - Settings Customization (Requirement 28)
 - Email Notifications (Requirement 19)
 - Task Notes (Requirement 16)
@@ -196,6 +196,6 @@ Test Deliverables
 -----------------
 -   Test Plan
 -   User-Acceptance Test Spreadsheet
--   Report of results from user surveys and changes that followed (Link will be added when testing begins)
+-   Report of results from user surveys
 
 

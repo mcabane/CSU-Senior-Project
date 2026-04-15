@@ -37,16 +37,16 @@ class Task < ApplicationRecord
   end
 
   def validate_custom_recurrence
-    if recurrence == "custom"
+     return unless recurrence == "custom"
 
       if custom_recurrence_unit.blank?
-        errors.add("A custom time unit must be selected when using custom recurrence. Ex: days")
+        errors.add(:custom_recurrence_unit, "must be selected when using custom recurrence.")
       end
 
       if custom_recurrence_number.blank?
-        errors.add("Number must be provided when using custom recurrence for duration interval")
+        errors.add(:custom_recurrence_number,"must be provided when using custom recurrence for duration interval.")
       elsif custom_recurrence_number.to_i < 1
-        errors.add("Number must be at least 1")
+        errors.add(:custom_recurrence_number, " must be at least 1.")
       end
     end
   end

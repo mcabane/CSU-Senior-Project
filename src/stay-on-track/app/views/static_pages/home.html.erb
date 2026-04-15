@@ -17,26 +17,32 @@
 <div class="theme-toggle-section">
   <button id="theme-toggle" class="switch"></button>
 </div>
-
+<% if logged_in? %> 
 <div class="counter">
   <a href="#overdue-section"  data-turbo="false" class="section-link">
     <div class="overdue-counter">
-      <h4> Overdue Tasks </h4>
-      <h4> <%= @overdue_tasks.count%></h4>
+      <div class="counter-text">
+        <h2> Overdue Tasks </h2>
+        <h4> <%= @overdue_tasks.count %></h4>
+      </div>
     </div>
   </a>
 
   <a href="#upcoming-section"  data-turbo="false" class="section-link">
     <div class="upcoming-counter">
-      <h4> Upcoming Tasks </h4>
-      <h4> <%= @upcoming_tasks.count%></h4>
+      <div class="counter-text">
+        <h2> Upcoming Tasks </h2>
+        <h4> <%= @upcoming_tasks.count %></h4>
+      </div>
     </div>
   </a>
 
   <a href="#completed-section" class="section-link">
     <div class="completed-counter">
-      <h4> Completed Tasks </h4>
-      <h4> <%= @completed_tasks.count%></h4>
+      <div class="counter-text">
+        <h2> Completed Tasks </h2>
+        <h4> <%= @completed_tasks.count %></h4>
+      </div>
     </div>
   </a>
 
@@ -51,6 +57,7 @@
     Create Task
   </span>
   <% end %>
+
 
   <div id="overdue-section">
   <h2 class="overdue">Overdue Tasks</h2>
@@ -258,6 +265,27 @@
       </div>
     <% end %>
   </section>
+<% end %>
+
+<% if !logged_in? %>
+<div class="landing-section">
+  <span class="Logo-Big"> 
+    <span class="Logo-Light">
+      <%= render inline: Rails.root.join("app/assets/images/Logo-A.svg").read %> 
+    </span>
+
+    <span class="Logo-Dark">
+      <%= render inline: Rails.root.join("app/assets/images/Logo-B.svg").read %> 
+    </span>
+  </span>   
+  
+  <h1> Welcome to the Stay On Track Web Application! </h1>
+  <p> 
+      New user? <%= link_to "Sign up here", signup_path %>
+  </p>
+</div>
+<% end %>
+
 </div>
 
 <script>
@@ -286,17 +314,17 @@
     const newToggle = toggle.cloneNode(true);
     toggle.replaceWith(newToggle);
 
-      newToggle.addEventListener("click", () => {
+    newToggle.addEventListener("click", () => {
     const darkModeOn = document.documentElement.classList.contains("theme-dark");
 
     if (darkModeOn) {
-    document.documentElement.classList.remove("theme-dark");
-    newToggle.textContent = "Dark Mode";
-    localStorage.setItem("theme", "theme-light");
+      document.documentElement.classList.remove("theme-dark");
+      newToggle.textContent = "Dark Mode";
+      localStorage.setItem("theme", "theme-light");
     } else {
-    document.documentElement.classList.add("theme-dark");
-    newToggle.textContent = "Light Mode";
-    localStorage.setItem("theme", "theme-dark");
+      document.documentElement.classList.add("theme-dark");
+      newToggle.textContent = "Light Mode";
+      localStorage.setItem("theme", "theme-dark");
     }
 
     });

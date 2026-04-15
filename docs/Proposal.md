@@ -57,7 +57,6 @@ Libraries, Packages, Development Kits, etc. to be used in the proposed implement
 --------------------------------------------------------------------------------------------------
 
 *   Ruby on Rails
-*   FullCalendar
 *   Hotwire
 
 Additional Software/Equipment Needed
