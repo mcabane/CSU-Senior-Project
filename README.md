@@ -13,14 +13,8 @@ based on deadline and urgency. The web application theme will also be
 customizable with color themes.
 
 ## Compile/Deploy
-
 The application will be deployed to a hosting website, Fly.io.
-
-## Usage
-(To be completed later.)
-
-## Options
-(To be completed later.)
+[Link to application](https://stay-on-track.fly.dev/)
 
 ## Testing
-(To be completed later.)
+Completed by performing user-testing. 
