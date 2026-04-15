@@ -58,6 +58,8 @@ Libraries, Packages, Development Kits, etc. to be used in the proposed implement
 
 *   Ruby on Rails
 *   Hotwire
+*   Bootstrap
+*   Fly.io (free version)
 
 Additional Software/Equipment Needed
 ------------------------------------
