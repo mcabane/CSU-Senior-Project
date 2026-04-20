@@ -1,20 +1,17 @@
 # Stay on Track Web Application
 
-The Stay on Track web application will allow users decide on the types of task 
-they wish to be reminded of, that way if it does not apply to them it would not
-clutter the interface. Users will be able to categorize tasks using labels and 
-illustrated icons. The user will be able to mark specific tasks with different 
-levels of urgency and the ability to mark if the deadline for said task is 
-flexible or concrete. The web application will include different icon statuses 
-to show visual progression of the tasks. For example, if maintenance is
-continuously pushed off, the appliance icon will change to have a broken 
-appearance. The web application will include a to-do list of recommended tasks
-based on deadline and urgency. The web application theme will also be 
-customizable with color themes.
+The Stay on Track web application will allow users create an account to 
+set up recurring tasks of different intervals (ex: monthly, 6 months, yearly). 
+Users can organize tasks by categories and will be able to mark  tasks with 
+different levels of urgency and the ability to mark if the deadline for said 
+task is flexible or concrete. The dashboard will display tasks in different 
+sections: Overdue, Upcoming, and Completed. The web application will include 
+a counter of tasks in each section to show visual status of the tasks overall.
+Users are also able to switch themes between the default and dark mode.  
 
 ## Compile/Deploy
 The application will be deployed to a hosting website, Fly.io.
 [Link to application](https://stay-on-track.fly.dev/)
 
 ## Testing
-Completed by performing user-testing. 
+Completed by performing user-testing as described in [Test Plan.](docs/Test-Plan.md) 

@@ -36,7 +36,7 @@
 
           <div class="form-group">
             <%= form.label :recurrence_type, "Recurrence Type" %>
-            <%= form.select :recurrence_type, Task::RECURRENCE_TYPES.map { |d| [d.humanize, d] } %>
+            <%= form.select :recurrence_type, Task::RECURRENCE_TYPES.map { |d| [d.humanize, d] }, { selected: @task.recurrence_type } %>
           </div>
         
           <div id="weekday_recurrence_section">

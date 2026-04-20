@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
   def update
     @user = current_user
     if @user.update(account_params)
-      redirect_to account_path, notice: "User settings updated successfully."
+      redirect_to account_path, notice: "User account updated successfully."
     else
       render :edit, status: :unprocessable_content
     end

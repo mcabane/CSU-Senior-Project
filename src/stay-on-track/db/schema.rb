@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_02_125046) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_19_022350) do
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -26,6 +26,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_02_125046) do
     t.datetime "completed_at"
     t.string "recurrence_type", default: "completion_date", null: false
     t.string "weekday_recurrence"
+    t.integer "custom_recurrence_number"
+    t.string "custom_recurrence_unit"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to root_path, notice: "Task created successfully!"
     else
-      render :new, status: :unprocessable_entity, alert: "Task creation failed."
+      render :new, status: :unprocessable_content, alert: "Task creation failed."
     end
   end
 
@@ -34,6 +34,7 @@ class TasksController < ApplicationController
   def update
     @task = current_user.tasks.find(params[:id])
     attrs = task_params.to_h
+    
     attrs[:completed_at] = Time.current if attrs["completed"] == "true"
     if @task.update(attrs)
         redirect_to root_path, notice: "Task updated!"
@@ -42,6 +43,7 @@ class TasksController < ApplicationController
     end
   end
   
+  # Not yet implemented
   def delete_category
     category = params[:category]
     current_user.tasks.where(category: category).update_all(category: nil)
@@ -61,7 +63,7 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(
-      :title, :description, :deadline_date, :recurrence, 
+      :title, :description, :deadline_date, :recurrence, :recurrence_type,
       :urgency, :deadline_type, :category, :completed, 
       :custom_category, :custom_recurrence_number, :custom_recurrence_unit, 
       :weekday_recurrence)

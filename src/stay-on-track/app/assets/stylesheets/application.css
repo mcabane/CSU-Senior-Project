@@ -379,7 +379,7 @@ input, select, textarea {
   font-weight: 600;
   font-family: "Quicksand", sans-serif;
   position: fixed;
-  top: 4rem;
+  top: 5rem;
   right: 6rem;
   height: 3rem;
   display: inline-flex;
@@ -457,6 +457,7 @@ input, select, textarea {
 .countdown-section p {
   margin: auto;
   color: var(--text-light);
+  font-size: 15px;
   font-weight: 900;
   text-align: center;
 }
@@ -629,7 +630,7 @@ input, select, textarea {
 }
 
 .overlay-button{
-  top: 4rem;
+  top: 5rem;
   right: 1rem;
   height: 4rem;
 }
@@ -743,6 +744,12 @@ input, select, textarea {
     flex-shrink: 1;
   }
 
+  .Logo-Big svg{
+  width: 15rem;
+  height: auto;
+}
+
+
 }
 
 @media (max-width: 600px) {
@@ -796,4 +803,27 @@ input, select, textarea {
   border-radius: 0px;
 }
 
+.Logo-Big svg{
+  width: 10rem;
+  height: auto;
+}
+
+.landing-section h1 {
+  font-size: 16px;
+}
+}
+
+@media (max-width: 500px) {
+
+.overlay-button{
+  top: 90%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  height: 65px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
 }
